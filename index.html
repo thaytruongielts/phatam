@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện Phát Âm Tiếng Anh: Âm /iː/ và /ɪ/</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #0056b3;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+            font-style: italic;
+            color: #666;
+        }
+        .question-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .question-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        .question-item:hover {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        .word {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .choices {
+            display: flex;
+            flex-direction: column;
+        }
+        .choices label {
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+        .choices label:hover {
+            background-color: #e9f5ff;
+            border-color: #007bff;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .check-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .check-btn:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .correct {
+            color: #28a745;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Luyện Phát Âm Tiếng Anh</h1>
+        <h2>Âm /iː/ (e.g., sheep) và /ɪ/ (e.g., ship)</h2>
+        <p class="intro">
+            Dựa vào bài học, hãy chọn cách phát âm chuẩn nhất cho mỗi từ dưới đây.
+        </p>
+        <div class="question-list">
+            
+            <div class="question-item">
+                <div class="word">1. sheep</div>
+                <div class="choices" id="q1">
+                    <label><input type="radio" name="q1" value="/ʃiːp/"> /ʃiːp/</label>
+                    <label><input type="radio" name="q1" value="/ʃɪp/"> /ʃɪp/</label>
+                    <label><input type="radio" name="q1" value="/ʃeɪp/"> /ʃeɪp/</label>
+                    <label><input type="radio" name="q1" value="/ʃɔːp/"> /ʃɔːp/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(1)">Kiểm tra</button>
+                <div class="result" id="result1"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">2. ship</div>
+                <div class="choices" id="q2">
+                    <label><input type="radio" name="q2" value="/ʃiːp/"> /ʃiːp/</label>
+                    <label><input type="radio" name="q2" value="/ʃɪp/"> /ʃɪp/</label>
+                    <label><input type="radio" name="q2" value="/ʃeɪp/"> /ʃeɪp/</label>
+                    <label><input type="radio" name="q2" value="/ʃɔːp/"> /ʃɔːp/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(2)">Kiểm tra</button>
+                <div class="result" id="result2"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">3. sit</div>
+                <div class="choices" id="q3">
+                    <label><input type="radio" name="q3" value="/siːt/"> /siːt/</label>
+                    <label><input type="radio" name="q3" value="/sɪt/"> /sɪt/</label>
+                    <label><input type="radio" name="q3" value="/set/"> /set/</label>
+                    <label><input type="radio" name="q3" value="/sɑːt/"> /sɑːt/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(3)">Kiểm tra</button>
+                <div class="result" id="result3"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">4. seat</div>
+                <div class="choices" id="q4">
+                    <label><input type="radio" name="q4" value="/siːt/"> /siːt/</label>
+                    <label><input type="radio" name="q4" value="/sɪt/"> /sɪt/</label>
+                    <label><input type="radio" name="q4" value="/set/"> /set/</label>
+                    <label><input type="radio" name="q4" value="/sɑːt/"> /sɑːt/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(4)">Kiểm tra</button>
+                <div class="result" id="result4"></div>
+            </div>
+            
+            <div class="question-item">
+                <div class="word">5. feel</div>
+                <div class="choices" id="q5">
+                    <label><input type="radio" name="q5" value="/fiːl/"> /fiːl/</label>
+                    <label><input type="radio" name="q5" value="/fɪl/"> /fɪl/</label>
+                    <label><input type="radio" name="q5" value="/fel/"> /fel/</label>
+                    <label><input type="radio" name="q5" value="/fɔːl/"> /fɔːl/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(5)">Kiểm tra</button>
+                <div class="result" id="result5"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">6. fill</div>
+                <div class="choices" id="q6">
+                    <label><input type="radio" name="q6" value="/fiːl/"> /fiːl/</label>
+                    <label><input type="radio" name="q6" value="/fɪl/"> /fɪl/</label>
+                    <label><input type="radio" name="q6" value="/fel/"> /fel/</label>
+                    <label><input type="radio" name="q6" value="/fɔːl/"> /fɔːl/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(6)">Kiểm tra</button>
+                <div class="result" id="result6"></div>
+            </div>
+            
+            <div class="question-item">
+                <div class="word">7. easy</div>
+                <div class="choices" id="q7">
+                    <label><input type="radio" name="q7" value="/ˈiːzi/"> /ˈiːzi/</label>
+                    <label><input type="radio" name="q7" value="/ˈɪzi/"> /ˈɪzi/</label>
+                    <label><input type="radio" name="q7" value="/ˈeɪzi/"> /ˈeɪzi/</label>
+                    <label><input type="radio" name="q7" value="/ˈæzi/"> /ˈæzi/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(7)">Kiểm tra</button>
+                <div class="result" id="result7"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">8. eat</div>
+                <div class="choices" id="q8">
+                    <label><input type="radio" name="q8" value="/iːt/"> /iːt/</label>
+                    <label><input type="radio" name="q8" value="/ɪt/"> /ɪt/</label>
+                    <label><input type="radio" name="q8" value="/et/"> /et/</label>
+                    <label><input type="radio" name="q8" value="/aɪt/"> /aɪt/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(8)">Kiểm tra</button>
+                <div class="result" id="result8"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">9. please</div>
+                <div class="choices" id="q9">
+                    <label><input type="radio" name="q9" value="/plɪz/"> /plɪz/</label>
+                    <label><input type="radio" name="q9" value="/plez/"> /plez/</label>
+                    <label><input type="radio" name="q9" value="/pliːz/"> /pliːz/</label>
+                    <label><input type="radio" name="q9" value="/plæs/"> /plæs/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(9)">Kiểm tra</button>
+                <div class="result" id="result9"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">10. meat</div>
+                <div class="choices" id="q10">
+                    <label><input type="radio" name="q10" value="/mɪt/"> /mɪt/</label>
+                    <label><input type="radio" name="q10" value="/meɪt/"> /meɪt/</label>
+                    <label><input type="radio" name="q10" value="/mɑːt/"> /mɑːt/</label>
+                    <label><input type="radio" name="q10" value="/miːt/"> /miːt/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(10)">Kiểm tra</button>
+                <div class="result" id="result10"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">11. cheese</div>
+                <div class="choices" id="q11">
+                    <label><input type="radio" name="q11" value="/tʃɪz/"> /tʃɪz/</label>
+                    <label><input type="radio" name="q11" value="/tʃiːz/"> /tʃiːz/</label>
+                    <label><input type="radio" name="q11" value="/tʃes/"> /tʃes/</label>
+                    <label><input type="radio" name="q11" value="/tʃɑːz/"> /tʃɑːz/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(11)">Kiểm tra</button>
+                <div class="result" id="result11"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">12. pizza</div>
+                <div class="choices" id="q12">
+                    <label><input type="radio" name="q12" value="/ˈpɪtsə/"> /ˈpɪtsə/</label>
+                    <label><input type="radio" name="q12" value="/ˈpiːtsə/"> /ˈpiːtsə/</label>
+                    <label><input type="radio" name="q12" value="/ˈpetsə/"> /ˈpetsə/</label>
+                    <label><input type="radio" name="q12" value="/ˈpɑːtsə/"> /ˈpɑːtsə/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(12)">Kiểm tra</button>
+                <div class="result" id="result12"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">13. think</div>
+                <div class="choices" id="q13">
+                    <label><input type="radio" name="q13" value="/θiːŋk/"> /θiːŋk/</label>
+                    <label><input type="radio" name="q13" value="/θɪŋk/"> /θɪŋk/</label>
+                    <label><input type="radio" name="q13" value="/θeŋk/"> /θeŋk/</label>
+                    <label><input type="radio" name="q13" value="/θɑːŋk/"> /θɑːŋk/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(13)">Kiểm tra</button>
+                <div class="result" id="result13"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">14. listen</div>
+                <div class="choices" id="q14">
+                    <label><input type="radio" name="q14" value="/ˈliːsən/"> /ˈliːsən/</label>
+                    <label><input type="radio" name="q14" value="/ˈlɪsn/"> /ˈlɪsn/</label>
+                    <label><input type="radio" name="q14" value="/ˈlesən/"> /ˈlesən/</label>
+                    <label><input type="radio" name="q14" value="/ˈlɑːsən/"> /ˈlɑːsən/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(14)">Kiểm tra</button>
+                <div class="result" id="result14"></div>
+            </div>
+            
+            <div class="question-item">
+                <div class="word">15. ticket</div>
+                <div class="choices" id="q15">
+                    <label><input type="radio" name="q15" value="/ˈtiːkɪt/"> /ˈtiːkɪt/</label>
+                    <label><input type="radio" name="q15" value="/ˈtɪkɪt/"> /ˈtɪkɪt/</label>
+                    <label><input type="radio" name="q15" value="/ˈtekɪt/"> /ˈtekɪt/</label>
+                    <label><input type="radio" name="q15" value="/ˈtɑːkɪt/"> /ˈtɑːkɪt/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(15)">Kiểm tra</button>
+                <div class="result" id="result15"></div>
+            </div>
+            
+            <div class="question-item">
+                <div class="word">16. fifteen</div>
+                <div class="choices" id="q16">
+                    <label><input type="radio" name="q16" value="/fɪfˈtiːn/"> /fɪfˈtiːn/</label>
+                    <label><input type="radio" name="q16" value="/fɪfˈtɪn/"> /fɪfˈtɪn/</label>
+                    <label><input type="radio" name="q16" value="/fefˈten/"> /fefˈten/</label>
+                    <label><input type="radio" name="q16" value="/fɑːfˈtɑːn/"> /fɑːfˈtɑːn/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(16)">Kiểm tra</button>
+                <div class="result" id="result16"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">17. sick</div>
+                <div class="choices" id="q17">
+                    <label><input type="radio" name="q17" value="/siːk/"> /siːk/</label>
+                    <label><input type="radio" name="q17" value="/sɪk/"> /sɪk/</label>
+                    <label><input type="radio" name="q17" value="/sek/"> /sek/</label>
+                    <label><input type="radio" name="q17" value="/sɑːk/"> /sɑːk/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(17)">Kiểm tra</button>
+                <div class="result" id="result17"></div>
+            </div>
+            
+            <div class="question-item">
+                <div class="word">18. live</div>
+                <div class="choices" id="q18">
+                    <label><input type="radio" name="q18" value="/liːv/"> /liːv/</label>
+                    <label><input type="radio" name="q18" value="/lɪv/"> /lɪv/</label>
+                    <label><input type="radio" name="q18" value="/lev/"> /lev/</label>
+                    <label><input type="radio" name="q18" value="/lɑːv/"> /lɑːv/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(18)">Kiểm tra</button>
+                <div class="result" id="result18"></div>
+            </div>
+            
+            <div class="question-item">
+                <div class="word">19. minute</div>
+                <div class="choices" id="q19">
+                    <label><input type="radio" name="q19" value="/ˈmɪnɪt/"> /ˈmɪnɪt/</label>
+                    <label><input type="radio" name="q19" value="/ˈmiːnɪt/"> /ˈmiːnɪt/</label>
+                    <label><input type="radio" name="q19" value="/ˈmenɪt/"> /ˈmenɪt/</label>
+                    <label><input type="radio" name="q19" value="/ˈmɑːnɪt/"> /ˈmɑːnɪt/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(19)">Kiểm tra</button>
+                <div class="result" id="result19"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">20. his</div>
+                <div class="choices" id="q20">
+                    <label><input type="radio" name="q20" value="/hiːz/"> /hiːz/</label>
+                    <label><input type="radio" name="q20" value="/hɪz/"> /hɪz/</label>
+                    <label><input type="radio" name="q20" value="/hez/"> /hez/</label>
+                    <label><input type="radio" name="q20" value="/hɑːz/"> /hɑːz/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(20)">Kiểm tra</button>
+                <div class="result" id="result20"></div>
+            </div>
+            
+            <div class="question-item">
+                <div class="word">21. piece</div>
+                <div class="choices" id="q21">
+                    <label><input type="radio" name="q21" value="/pɪs/"> /pɪs/</label>
+                    <label><input type="radio" name="q21" value="/piːs/"> /piːs/</label>
+                    <label><input type="radio" name="q21" value="/pes/"> /pes/</label>
+                    <label><input type="radio" name="q21" value="/pɑːs/"> /pɑːs/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(21)">Kiểm tra</button>
+                <div class="result" id="result21"></div>
+            </div>
+            
+            <div class="question-item">
+                <div class="word">22. sea</div>
+                <div class="choices" id="q22">
+                    <label><input type="radio" name="q22" value="/siː/"> /siː/</label>
+                    <label><input type="radio" name="q22" value="/sɪ/"> /sɪ/</label>
+                    <label><input type="radio" name="q22" value="/seɪ/"> /seɪ/</label>
+                    <label><input type="radio" name="q22" value="/sɑː/"> /sɑː/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(22)">Kiểm tra</button>
+                <div class="result" id="result22"></div>
+            </div>
+            
+            <div class="question-item">
+                <div class="word">23. leave</div>
+                <div class="choices" id="q23">
+                    <label><input type="radio" name="q23" value="/lɪv/"> /lɪv/</label>
+                    <label><input type="radio" name="q23" value="/liːv/"> /liːv/</label>
+                    <label><input type="radio" name="q23" value="/lev/"> /lev/</label>
+                    <label><input type="radio" name="q23" value="/lɑːv/"> /lɑːv/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(23)">Kiểm tra</button>
+                <div class="result" id="result23"></div>
+            </div>
+
+            <div class="question-item">
+                <div class="word">24. slip</div>
+                <div class="choices" id="q24">
+                    <label><input type="radio" name="q24" value="/sliːp/"> /sliːp/</label>
+                    <label><input type="radio" name="q24" value="/slɪp/"> /slɪp/</label>
+                    <label><input type="radio" name="q24" value="/sleɪp/"> /sleɪp/</label>
+                    <label><input type="radio" name="q24" value="/slɑːp/"> /slɑːp/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(24)">Kiểm tra</button>
+                <div class="result" id="result24"></div>
+            </div>
+            
+            <div class="question-item">
+                <div class="word">25. hill</div>
+                <div class="choices" id="q25">
+                    <label><input type="radio" name="q25" value="/hiːl/"> /hiːl/</label>
+                    <label><input type="radio" name="q25" value="/hɪl/"> /hɪl/</label>
+                    <label><input type="radio" name="q25" value="/hel/"> /hel/</label>
+                    <label><input type="radio" name="q25" value="/hɑːl/"> /hɑːl/</label>
+                </div>
+                <button class="check-btn" onclick="checkAnswer(25)">Kiểm tra</button>
+                <div class="result" id="result25"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            1: '/ʃiːp/',
+            2: '/ʃɪp/',
+            3: '/sɪt/',
+            4: '/siːt/',
+            5: '/fiːl/',
+            6: '/fɪl/',
+            7: '/ˈiːzi/',
+            8: '/iːt/',
+            9: '/pliːz/',
+            10: '/miːt/',
+            11: '/tʃiːz/',
+            12: '/ˈpiːtsə/',
+            13: '/θɪŋk/',
+            14: '/ˈlɪsn/',
+            15: '/ˈtɪkɪt/',
+            16: '/fɪfˈtiːn/',
+            17: '/sɪk/',
+            18: '/lɪv/',
+            19: '/ˈmɪnɪt/',
+            20: '/hɪz/',
+            21: '/piːs/',
+            22: '/siː/',
+            23: '/liːv/',
+            24: '/slɪp/',
+            25: '/hɪl/'
+        };
+
+        function checkAnswer(questionNumber) {
+            const choices = document.querySelectorAll(`#q${questionNumber} input[name="q${questionNumber}"]`);
+            const resultDiv = document.getElementById(`result${questionNumber}`);
+            let selectedValue = null;
+
+            for (const choice of choices) {
+                if (choice.checked) {
+                    selectedValue = choice.value;
+                    break;
+                }
+            }
+
+            if (selectedValue === null) {
+                resultDiv.innerHTML = "Vui lòng chọn một đáp án.";
+                resultDiv.className = "result incorrect";
+                return;
+            }
+
+            if (selectedValue === correctAnswers[questionNumber]) {
+                resultDiv.innerHTML = "🎉 Chính xác!";
+                resultDiv.className = "result correct";
+            } else {
+                resultDiv.innerHTML = "Chưa đúng. Thử lại nhé!";
+                resultDiv.className = "result incorrect";
+            }
+        }
+    </script>
+
+</body>
+</html>
